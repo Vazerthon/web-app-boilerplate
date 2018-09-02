@@ -1,0 +1,16 @@
+{
+  "name": "web-app-boilerplate",
+  "version": "1.0.0",
+  "description": "web-app-boilerplate",
+  "repository": "git@github.com:Vazerthon/web-app-boilerplate.git",
+  "author": "Paul Vallis <vallis1@gmail.com>",
+  "license": "Apache-2.0",
+  "scripts": {
+    "install-api": "cd api && npm install",
+    "start-api": "cd api && npm run start-dev",
+    "start": "concurrently \"npm run start-api\""
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  }
+}
