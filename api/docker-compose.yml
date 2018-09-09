@@ -1,4 +1,8 @@
 version: '2'
+
+volumes:
+  db-data:
+
 services:
   api:
     build:
@@ -9,3 +13,16 @@ services:
     ports:
       - 9229:9229
       - 3001:3001
+  db:
+    image: postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data/pgdata
+    command: postgres
+    ports:
+     - "5432:5432"
+    environment:
+     PGDATA: /var/lib/postgresql/data/pgdata
+     POSTGRES_PASSWORD: ${DB_PASS}
+     POSTGRES_USER: ${DB_USER}
+     POSTGRES_DB: ${DB_NAME}
+     POSTGRES_INITDB_ARGS: ''
