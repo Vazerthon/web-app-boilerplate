@@ -1,0 +1,7 @@
+exports.up = async knex => {
+  // knex.schema.createTable(...)
+};
+
+exports.down = async knex => {
+  // knex.schema.dropTable(...)
+};

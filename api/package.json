@@ -10,11 +10,16 @@
     "build-container": "docker build -t vallis/cv-playground .",
     "start-dev": "docker-compose kill && docker-compose build && docker-compose up",
     "build-app-dev": "babel src -d dist --no-comments --copy-files --ignore node_modules",
-    "start-app-dev": "nodemon --watch src/ -e js --exec \"npm run build-app-dev && node --inspect=0.0.0.0:9229 .\""
+    "start-app-dev": "nodemon --watch src/ -e js --exec \"npm run build-app-dev && node --inspect=0.0.0.0:9229 .\"",
+    "db": "knex"
   },
   "dependencies": {
+    "dotenv": "^6.0.0",
+    "knex": "^0.15.2",
     "koa": "^2.5.2",
-    "nodemon": "^1.18.3"
+    "nodemon": "^1.18.3",
+    "objection": "^1.2.6",
+    "pg": "^7.4.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

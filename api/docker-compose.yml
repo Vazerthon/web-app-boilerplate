@@ -13,6 +13,12 @@ services:
     ports:
       - 9229:9229
       - 3001:3001
+    environment:
+      NODE_ENV: development
+      DB_HOST: 
+      DB_USER:
+      DB_PASS:
+      DB_NAME:
   db:
     image: postgres
     volumes:
@@ -25,4 +31,3 @@ services:
      POSTGRES_PASSWORD: ${DB_PASS}
      POSTGRES_USER: ${DB_USER}
      POSTGRES_DB: ${DB_NAME}
-     POSTGRES_INITDB_ARGS: ''
