@@ -10,6 +10,8 @@ services:
       context: .
     volumes:
       - ./:/data
+    links:
+      - db
     ports:
       - 9229:9229
       - 3001:3001

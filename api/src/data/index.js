@@ -5,7 +5,7 @@ const {
 } = process.env;
 
 export default Knex({
-  client: 'postresql',
+  client: 'pg',
   connection: {
     host: DB_HOST,
     user: DB_USER,
