@@ -1,3 +1,4 @@
+// TODO use environment variables in knexfile
 module.exports = {
   development: {
     client: 'pg',
