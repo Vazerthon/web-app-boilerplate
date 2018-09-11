@@ -24,3 +24,4 @@ TODO
 - Add a create-react-app client
 - Set up CI
 - Set up hosting
+- Prod docker file
