@@ -8,7 +8,9 @@
   "scripts": {
     "install-api": "cd api && npm install",
     "start-api": "cd api && npm run start-dev",
-    "start": "concurrently \"npm run start-api\""
+    "install-web": "cd web && npm install",
+    "start-web": "cd web && npm run start-dev",
+    "start": "concurrently \"npm run start-api\" \"npm run start-web\""
   },
   "devDependencies": {
     "concurrently": "^3.5.0"

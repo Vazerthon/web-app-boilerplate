@@ -2,7 +2,7 @@
   "name": "web-app-boilerplate",
   "version": "1.0.0",
   "scripts": {
-    "start": "react-scripts start",
+    "start-dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom"
   },
