@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import Koa from 'koa';
+import Router from 'koa-router';
 import boilerplate from './data/models/boilerplate';
 
 dotenv.load();
@@ -10,8 +11,9 @@ const mapToMessage = mapToProp('message');
 const arrayToComaString = array => array.reduce((p, c) => `${p}${p ? ', ' : ''}${c}`, '');
 
 const app = new Koa();
+const router = new Router();
 
-app.use(ctx => {
+router.get('/', (ctx => {
   const returnMessage = message => {
     ctx.body = message;
   };
@@ -22,7 +24,9 @@ app.use(ctx => {
     .then(arrayToComaString)
     .then(returnMessage)
     .catch(log);
-});
+}));
+
+app.use(router.routes());
 
 // TODO use env variable for server port
 app.listen(3001);
