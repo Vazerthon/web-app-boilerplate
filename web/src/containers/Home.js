@@ -1,10 +1,19 @@
-import { connect } from 'react-redux';
+import { connectWithLifecycle } from 'react-lifecycle-component';
 import Home from '../components/Home';
 
-const mapStateToProps = () => ({});
+import { actions } from '../state/actions/app';
 
-const mapDispatchToProps = () => ({});
+const mapStateToProps = ({ app }) => ({
+  message: app.message,
+});
 
-const AppRootContainer = connect(mapStateToProps, mapDispatchToProps)(Home);
+const mapDispatchToProps = dispatch => ({
+  componentDidMount: () => dispatch(actions.loadMessage()),
+});
+
+const AppRootContainer = connectWithLifecycle(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Home);
 
 export default AppRootContainer;

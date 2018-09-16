@@ -1,6 +1,7 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
 import { eventChannel } from 'redux-saga';
 import history from '../history';
+import settings from '../../settings';
 
 import { constants, actions } from '../actions/app';
 
@@ -22,6 +23,16 @@ function* routerSaga() {
   yield takeEvery(browserNavigationEvent, put);
 }
 
-const appSagas = [routerSaga];
+function* loadMessage() {
+  const result = yield fetch(settings.apiAddress);
+  const message = yield result.text();
+  yield put(actions.setMessage(message));
+}
+
+function* loadBoilerplateSaga() {
+  yield takeEvery(constants.loadMessage, loadMessage);
+}
+
+const appSagas = [routerSaga, loadBoilerplateSaga];
 
 export default appSagas;
