@@ -13,6 +13,6 @@
     "start": "concurrently \"npm run start-api\" \"npm run start-web\""
   },
   "devDependencies": {
-    "concurrently": "^3.5.0"
+    "concurrently": "^5.0.2"
   }
 }
