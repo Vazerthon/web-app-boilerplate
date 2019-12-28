@@ -13,10 +13,10 @@ export default function Home() {
   if (error) {
     return <p>Error :(</p>;
   }
-  
+
   return (
     <div>
       {data.boilerplate.name}
     </div>
   );
-};
+}

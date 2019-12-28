@@ -1,7 +1,7 @@
 import { ApolloServer } from 'apollo-server';
 import glue from 'schemaglue';
 
-export const startServer = () => {
+export default () => {
   const options = { js: '**/*.js' };
 
   const {
@@ -15,6 +15,7 @@ export const startServer = () => {
   });
 
   server.listen().then(({ url }) => {
+    // eslint-disable-next-line no-console
     console.log(`🚀 GraphQL server ready at ${url}`);
   });
 };

@@ -1,12 +1,7 @@
 {
-  "extends": "airbnb",
+  "extends": "../.eslintrc",
   "env": {
     "browser": true,
     "jasmine": true
-  },
-  "rules": {
-    "linebreak-style": 0,
-    "function-paren-newline": 0,
-    "arrow-parens": 0
   }
 }
