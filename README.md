@@ -28,7 +28,6 @@ Boilerplate setup for a static React app backed by a Koa API. A bunch of technol
 - while the stack is running `curl localhost:3001` will return the seeded hello world message
 
 ## TODO
-- Add a create-react-app client
 - Set up CI
 - Set up hosting
 - Prod docker file
