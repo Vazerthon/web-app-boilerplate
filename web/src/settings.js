@@ -1,6 +1,6 @@
 
 const developmentSettings = {
-  apiAddress: 'http://localhost:3001',
+  apiAddress: 'http://localhost:4000',
 };
 
 const productionSettings = {

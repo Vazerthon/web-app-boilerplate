@@ -1,18 +1,22 @@
 import React from 'react';
-import PropType from 'prop-types';
+import { useQuery } from '@apollo/react-hooks';
 
-export default function Home({ message }) {
+import boilerplate from '../graphql/queries/boilerplate';
+
+export default function Home() {
+  const { loading, error, data } = useQuery(boilerplate);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error :(</p>;
+  }
+  
   return (
     <div>
-      {message}
+      {data.boilerplate.name}
     </div>
   );
-}
-
-Home.propTypes = {
-  message: PropType.string,
-};
-
-Home.defaultProps = {
-  message: 'default message',
 };
