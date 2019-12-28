@@ -1,9 +1,8 @@
 # setup
 FROM node
-WORKDIR /data
 
-# install deps
-RUN npm install
+RUN mkdir /data
+WORKDIR /data
 
 # start
 CMD [ "npm", "run", "start-app-dev" ]

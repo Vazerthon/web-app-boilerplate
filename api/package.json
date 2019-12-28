@@ -7,31 +7,33 @@
   "author": "Paul Vallis <vallis1@gmail.com>",
   "license": "Apache-2.0",
   "scripts": {
-    "build-container": "docker build -t vallis/cv-playground .",
     "start-dev": "docker-compose kill && docker-compose build && docker-compose up",
     "build-app-dev": "babel src -d dist --no-comments --copy-files --ignore node_modules",
-    "start-app-dev": "nodemon --watch src/ -e js --exec \"npm run build-app-dev && node --inspect=0.0.0.0:9229 .\"",
-    "db": "knex"
+    "run-node": "cd dist && node --inspect=0.0.0.0:9229 .",
+    "start-app-dev": "nodemon --watch src/ -e js --exec \"npm run build-app-dev && npm run run-node\"",
+    "db": "knex",
+    "lint": "eslint ."
   },
   "dependencies": {
-    "@koa/cors": "^2.2.2",
-    "dotenv": "^6.0.0",
-    "knex": "^0.15.2",
-    "koa": "^2.5.2",
-    "koa-router": "^7.4.0",
-    "nodemon": "^1.18.3",
-    "objection": "^1.2.6",
-    "pg": "^7.4.3"
+    "apollo-server": "^2.9.14",
+    "dotenv": "^8.2.0",
+    "graphql": "^14.5.8",
+    "knex": "^0.20.4",
+    "nodemon": "^2.0.2",
+    "objection": "^2.0.10",
+    "pg": "^7.15.2",
+    "schemaglue": "^4.0.4"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.10.0",
-    "prettier-eslint": "^8.8.2"
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "prettier-eslint": "^9.0.1"
   }
 }
